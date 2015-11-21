@@ -223,7 +223,7 @@ Suites.push({
     ]
 });
 Suites.push({
-    name: 'Elm 0.15.1',
+    name: 'Elm',
     url: 'todomvc/elm-0.15.1/index.html',
     version: '0.15.1 + virtual-dom ?',
     prepare: function (runner, contentWindow, contentDocument) {
@@ -260,7 +260,7 @@ Suites.push({
 });
 
 Suites.push({
-    name: 'Elm 0.16',
+    name: 'Elm',
     url: 'todomvc/elm-0.16/index.html',
     version: '0.16 + virtual-dom ?',
     prepare: function (runner, contentWindow, contentDocument) {

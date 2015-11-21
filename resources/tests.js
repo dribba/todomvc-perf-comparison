@@ -223,9 +223,9 @@ Suites.push({
     ]
 });
 Suites.push({
-    name: 'Elm',
+    name: 'Elm 0.15.1',
     url: 'todomvc/elm-0.15.1/index.html',
-    version: '0.15.1 + virtual-dom ?',
+    version: '+ virtual-dom ?',
     prepare: function (runner, contentWindow, contentDocument) {
         return runner.waitForElement('#new-todo').then(function (element) {
             element.focus();
@@ -260,9 +260,9 @@ Suites.push({
 });
 
 Suites.push({
-    name: 'Elm',
+    name: 'Elm 0.16',
     url: 'todomvc/elm-0.16/index.html',
-    version: '0.16 + virtual-dom ?',
+    version: '+ virtual-dom ?',
     prepare: function (runner, contentWindow, contentDocument) {
         return runner.waitForElement('#new-todo').then(function (element) {
             element.focus();

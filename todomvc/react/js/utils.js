@@ -1,7 +1,9 @@
-(function (window) {
+var app = app || {};
+
+(function () {
 	'use strict';
 
-	window.Utils = {
+	app.Utils = {
 		uuid: function () {
 			/*jshint bitwise:false */
 			var i, random;
@@ -29,6 +31,7 @@
 			}
 
 			var store = localStorage.getItem(namespace);
+			debugger;
 			return (store && JSON.parse(store)) || [];
 		},
 
@@ -45,5 +48,4 @@
 			return newObj;
 		}
 	};
-
-})(window);
+})();

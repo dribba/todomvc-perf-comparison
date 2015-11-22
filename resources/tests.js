@@ -121,10 +121,10 @@ Suites.push({
 Suites.push({
     name: 'React',
     url: 'todomvc/react/index.html',
-    version: '0.10.0',
+    version: '0.13.3',
     prepare: function (runner, contentWindow, contentDocument) {
-        contentWindow.Utils.store = function () {}
-        return runner.waitForElement('#new-todo').then(function (element) {
+        contentWindow.app.Utils.store = function () { return []; };
+        return runner.waitForElement('.new-todo').then(function (element) {
             element.focus();
             return element;
         });
@@ -135,7 +135,11 @@ Suites.push({
                 var keydownEvent = document.createEvent('Event');
                 keydownEvent.initEvent('keydown', true, true);
                 keydownEvent.which = 13; // VK_ENTER
+                keydownEvent.keyCode = 13; // VK_ENTER
+                var changeEvent = new Event('input', { bubbles: true });
+
                 newTodo.value = 'Something to do ' + i;
+                newTodo.dispatchEvent(changeEvent);
                 newTodo.dispatchEvent(keydownEvent);
             }
         }),
